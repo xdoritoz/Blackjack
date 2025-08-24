@@ -5,6 +5,9 @@ import java.util.List;
 
 public class Jugador {
     List<Carta> mano = new ArrayList<>();
+    List<Integer> pos = new ArrayList<>();
+    List<Integer> vistos = new ArrayList<>();
+
     private int creditos = 0;
     private String tipo = "";
     private int puntuacion = 0;
@@ -20,42 +23,34 @@ public class Jugador {
     }
 
     public int calcularPuntos() {
+        puntuacion = 0;
+
         for(Carta c : mano){
             puntuacion += c.getPuntos();
-            ases = calcularAses();
-            modificarAses();
+        }
+        modificarAses();
+
+        return puntuacion;
     }
 
-    return puntuacion;
-    }
+    public void modificarAses() {
+        pos = posicionA();
 
-    public void modificarAses(){
-        if (puntuacion > 21 && ases > 0 ){
-            for (Carta c : mano){
-                if (c.esAs() && c.getPuntos() == 11 ){
-                    c.setPuntos(1);
+        if (pos != null) {
+            for (int num : pos) {
+                if (getPuntuacion() > 21 && pos.get(num) != null && mano.get(pos.get(num)).getPuntos() == 11) {
+                    mano.get(pos.get(num)).setPuntos(1);
                     puntuacion -= 10;
-                    ases--;
-
                 }
             }
         }
     }
 
-    public int calcularAses(){
-        for(Carta c : mano){
-            if(c.getValor().equals("A")){
-                ases++;
-            }
-        }
-        return ases;
-    }
-
-    public List<Integer> posicionA(List<Carta> maza) {
+    public List<Integer> posicionA() {
         List<Integer> pos = new ArrayList<>();
         int count = 0;
 
-        for (Carta c : maza) {
+        for (Carta c : mano) {
             count++;
             if (c.getValor().equals("A")){
                 pos.add(count-1);
