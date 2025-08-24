@@ -17,14 +17,12 @@ public class Main {
         jugador.pedirCarta(baraja.removerCarta(baraja.getBaraja().getFirst()));
         jugador.pedirCarta(baraja.removerCarta(baraja.getBaraja().getFirst()));
 
-
         crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
         crupier.pedirCarta(new Carta(Palo.Trebol, "A", 11));
         crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
         crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
 
         crupier.jugar(baraja);
-
 
         System.out.println(crupier.getPuntuacion());
 
