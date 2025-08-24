@@ -5,12 +5,13 @@ import java.util.List;
 
 public class Jugador {
     List<Carta> mano = new ArrayList<>();
+    List<Integer> pos = new ArrayList<>();
+    List<Integer> vistos = new ArrayList<>();
+
     private int creditos = 0;
     private String tipo = "";
     private int puntuacion = 0;
     int ases;
-    List<Integer> pos = new ArrayList<>();
-
 
     public Jugador (int creditos, String tipo) {
         this.creditos = creditos;
@@ -25,14 +26,12 @@ public class Jugador {
         puntuacion = 0;
 
         for(Carta c : mano){
-            puntuacion +=  c.getPuntos();
-    };
-
+            puntuacion += c.getPuntos();
+        }
         modificarAses();
 
-    return puntuacion;
+        return puntuacion;
     }
-
 
     public void modificarAses() {
         pos = posicionA();
@@ -45,14 +44,6 @@ public class Jugador {
                 }
             }
         }
-    }
-
-
-    public int calcularAses(Carta c){
-            if(c.getValor().equals("A")){
-                ases++;
-            }
-        return ases;
     }
 
     public List<Integer> posicionA() {

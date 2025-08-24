@@ -12,18 +12,18 @@ public class Crupier extends Jugador {
     public void jugar(Baraja baraja){
         List<Integer> pos = new ArrayList<>();
 
-        setPuntuacion(calcularPuntos());
+        calcularPuntos();
 
         while (getPuntuacion() < 17) {
+
             Carta nueva = baraja.removerCarta(baraja.getBaraja().removeFirst());
             pedirCarta(nueva);
+
             calcularPuntos();
 
-
         }
-
         System.out.println("Aces: " + posicionA());
         System.out.println(getMano());
-        System.out.println("el crupier se planta con: " + getPuntuacion() +" puntos");
+        System.out.println("el crupier se planta con: " + getPuntuacion() + " puntos");
     }
 }

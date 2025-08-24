@@ -16,19 +16,16 @@ public class Main {
 
         jugador.pedirCarta(baraja.removerCarta(baraja.getBaraja().getFirst()));
         jugador.pedirCarta(baraja.removerCarta(baraja.getBaraja().getFirst()));
-
-
 //        System.out.println(jugador.getMano());
 //        System.out.println(jugador.calcularPuntos());
 
+        //crupier.pedirCarta(baraja.removerCarta(baraja.getBaraja().getFirst()));
+        //crupier.pedirCarta(baraja.removerCarta(baraja.getBaraja().getFirst()));
 
+        crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
         crupier.pedirCarta(new Carta(Palo.Trebol, "A", 11));
-        crupier.pedirCarta(new Carta(Palo.Trebol, "A", 11));
-
-
-
-
-
+        crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
+        crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
         //crupier.setPuntuacion(crupier.mano.get(0).getPuntos() + crupier.mano.get(1).getPuntos());
         crupier.jugar(baraja);
         //System.out.println(crupier.getMano());
