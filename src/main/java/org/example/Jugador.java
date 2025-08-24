@@ -42,8 +42,6 @@ public class Jugador {
         }
     }
 
-
-
     public int calcularAses(){
         for(Carta c : mano){
             if(c.getValor().equals("A")){
