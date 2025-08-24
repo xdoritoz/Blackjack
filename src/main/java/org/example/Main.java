@@ -22,6 +22,8 @@ public class Main {
         crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
         crupier.pedirCarta(new Carta(Palo.Diamante, "A", 11));
 
+
+
         crupier.jugar(baraja);
 
         System.out.println(crupier.getPuntuacion());
