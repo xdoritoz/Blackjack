@@ -11,9 +11,9 @@ public class Jugador {
     private int creditos = 0;
     private String tipo = "";
     private int puntuacion = 0;
-    int ases;
+    private Boolean turno = false;
 
-    public Jugador (int creditos, String tipo) {
+    public Jugador (String nombre, int creditos, String tipo) {
         this.creditos = creditos;
         this.tipo = tipo;
     }
@@ -67,6 +67,14 @@ public class Jugador {
         mano.add(carta);
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public List<Carta> getMano() {
         return mano;
     }
@@ -89,6 +97,14 @@ public class Jugador {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public Boolean getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Boolean turno) {
+        this.turno = turno;
     }
 
     public int getPuntuacion() {
