@@ -5,8 +5,8 @@ public class Main {
         System.out.println("Hello world!🍀💖");
 
 
-        Jugador jugador = new Jugador(10000, "jugador");
-        Jugador jugador2 = new Jugador(10000, "jugador");
+        Jugador jugador = new Jugador("a", 10000, "jugador");
+        Jugador jugador2 = new Jugador("b", 10000, "jugador");
 
         Crupier crupier = new Crupier();
 
