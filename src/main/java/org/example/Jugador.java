@@ -59,6 +59,9 @@ public class Jugador {
         return pos;
     }
 
+    public void colocarApuesta(int creditoApostado) {
+        creditos -= creditoApostado;
+    }
 
     public void pedirCarta(Carta carta) {
         mano.add(carta);
