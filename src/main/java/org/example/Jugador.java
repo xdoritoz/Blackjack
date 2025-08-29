@@ -8,6 +8,7 @@ public class Jugador {
     List<Integer> pos = new ArrayList<>();
     List<Integer> vistos = new ArrayList<>();
 
+    private String nombre;
     private int creditos = 0;
     private String tipo = "";
     private int puntuacion = 0;
