@@ -24,7 +24,6 @@ public class Main {
         crupier.jugar(baraja);
 
         Juego juego = new Juego();
-        juego.iniciarJuego();
 
     }
 

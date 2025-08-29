@@ -8,10 +8,12 @@ public class Jugador {
     List<Integer> pos = new ArrayList<>();
     List<Integer> vistos = new ArrayList<>();
 
+
     private int creditos = 0;
     private String tipo = "";
     private int puntuacion = 0;
     private Boolean turno = false;
+    private String nombre;
 
     public Jugador (String nombre, int creditos, String tipo) {
         this.creditos = creditos;
