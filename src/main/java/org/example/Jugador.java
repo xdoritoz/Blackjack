@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.exception.InsufficientBalanceException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +11,18 @@ public class Jugador {
     List<Integer> vistos = new ArrayList<>();
 
     private String nombre;
-    private int creditos = 0;
+    private int credito = 0;
     private String tipo = "";
     private int puntuacion = 0;
     private Boolean turno = false;
 
-    public Jugador (String nombre, int creditos, String tipo) {
-        this.creditos = creditos;
+    public Jugador (String nombre, int credito, String tipo) {
+        this.nombre = nombre;
+        this.credito = credito;
         this.tipo = tipo;
+    }
+
+    public Jugador() {
     }
 
     public Jugador(String tipo) {
@@ -84,12 +90,20 @@ public class Jugador {
         this.mano = mano;
     }
 
-    public int getCreditos() {
-        return creditos;
+    public int getCredito() {
+        return credito;
     }
 
-    public void setCreditos(int creditos) {
-        this.creditos = creditos;
+    public void setCredito(int credito) {
+        this.credito = credito;
+    }
+
+    public int getApuesta() {
+        return apuesta;
+    }
+
+    public void setApuesta(int apuesta) {
+        this.apuesta = apuesta;
     }
 
     public String getTipo() {
@@ -100,11 +114,11 @@ public class Jugador {
         this.tipo = tipo;
     }
 
-    public Boolean getTurno() {
+    public boolean getTurno() {
         return turno;
     }
 
-    public void setTurno(Boolean turno) {
+    public void setTurno(boolean turno) {
         this.turno = turno;
     }
 
@@ -120,9 +134,12 @@ public class Jugador {
     public String toString() {
         return "Jugador{" +
                 "mano=" + mano +
-                ", creditos=" + creditos +
+                ", nombre='" + nombre + '\'' +
+                ", credito=" + credito +
                 ", tipo='" + tipo + '\'' +
                 ", puntuacion=" + puntuacion +
+                ", turno=" + turno +
+                ", apuesta=" + apuesta +
                 '}';
     }
 }
