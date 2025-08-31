@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Juego {
+
+    List<Jugador> jugadores = new ArrayList<Jugador>();
+    int apuesta = 0;
+
     public void iniciarJuego() {
         Crupier crupier = new Crupier();
         Baraja baraja = new Baraja();
@@ -43,6 +47,7 @@ public class Juego {
                 errorOcurrido = true;
                 sc.nextLine();
             }
+
         } while (errorOcurrido);
 
         if (opcion == 1) {

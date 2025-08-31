@@ -14,7 +14,8 @@ public class Jugador {
     private int credito = 0;
     private String tipo = "";
     private int puntuacion = 0;
-    private Boolean turno = false;
+    private boolean turno = false;
+    private int apuesta = 0;
 
     public Jugador (String nombre, int credito, String tipo) {
         this.nombre = nombre;
@@ -66,8 +67,12 @@ public class Jugador {
         return pos;
     }
 
-    public void colocarApuesta(int creditoApostado) {
-        creditos -= creditoApostado;
+    public void colocarApuesta (int creditoApostado) throws InsufficientBalanceException {
+        if (credito < creditoApostado) {
+            throw new InsufficientBalanceException("No hay fondos suficientes para esa apuesta", credito, creditoApostado);
+        }
+        credito -= creditoApostado;
+        apuesta = creditoApostado;
     }
 
     public void pedirCarta(Carta carta) {
